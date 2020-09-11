@@ -6,7 +6,7 @@ function ListCard(props){
  return (
      <>
  
- <div className="listcard">
+ 
 
 <Card
  className="mt-3"
@@ -21,7 +21,7 @@ function ListCard(props){
  <p>Public Repo:{props.repo}</p>
  <p>Public Gists:{props.gists}</p>
 </Card>
- </div>
+ {/* </div> */}
  
 </>
 );
