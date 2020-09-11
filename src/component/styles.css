@@ -1,0 +1,14 @@
+.listcard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+}
+.ant-card-body{
+    padding: 10px 10px;
+}
+.inputbox{
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
