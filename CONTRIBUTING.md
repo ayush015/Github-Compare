@@ -7,6 +7,8 @@
 5. npm i or npm install
 6. npm start
 
+   then go to http://localhost:3000/
+
 ## Contributors guideline
 
 All PRs should be submitted with a screen recording/screenshot in order to get an approval.
