@@ -23,22 +23,32 @@ const Github = () =>{
    const handleSearch = (e) => {
       setUserInput(e.target.value)
    };
-   
+
+   const compare = (a,b) => {
+      if ( a.followers < b.followers ){
+         return -1;
+      }
+      else if ( a.followers > b.followers ){
+         return 1;
+      }
+      return 0;
+   }
+
    const handleSubmit = () => {
       fetch(`https://api.github.com/users/${userInput}`)
       .then(response => {
          return response.json();
-         
+
       })
       .then(data => {
          if(data.message){
             seterror(data.message)
          }else{
-            setGit([...gitdata,data])
+            setGit([...gitdata,data].sort(compare));
           seterror(null);
 
          }
-         
+
       })
       .catch(e => {
          console.log(e);
@@ -64,17 +74,15 @@ const Github = () =>{
           </Form.Group>
         </Form>
 
-   
+
      </div>
      <div className="listcard">
      {
       gitdata.map((gits)=>{
-      
-        
-            console.log(gits);
-        return( 
-          
-         error ? <h1 style={{textAlign:"center"}}>User {error}</h1> : (  <ListCard 
+
+        return(
+
+         error ? <h1 style={{textAlign:"center"}}>User {error}</h1> : (  <ListCard
        username = {gits.login}
        avatarUrl = {gits.avatar_url}
        name= {gits.name}
