@@ -34,7 +34,7 @@ const Github = () =>{
          if(data.message){
             seterror(data.message)
          }else{
-            setGit([...gitdata,data])
+          setGit([...gitdata,data].sort((a,b)=>{return a.followers-b.followers}))
           seterror(null);
 
          }
